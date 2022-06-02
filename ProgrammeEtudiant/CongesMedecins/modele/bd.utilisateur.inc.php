@@ -50,7 +50,6 @@
 				$inscription = $pdo->prepare("INSERT INTO utilisateur (id,nom,mdp) VALUES (?,?,?);");
 				if($inscription->execute(array($id,$nom,$mdpHash)))
                return true;
-           print "Le if marche pas mon boug".$e->getMessage();
 				}
 		}
 		catch (Exception $e) 

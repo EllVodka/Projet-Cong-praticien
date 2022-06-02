@@ -30,15 +30,14 @@ function getConges() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from repos");
+        $req = $cnx->prepare("SELECT repos.id as idC, repos.dateDebut AS debut, repos.dateFin AS fin, validation, idPraticien from repos inner join praticien on idPraticien = praticien.id;");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne) {
-            $res = new conge($ligne['id'],$ligne['dateDebut'],$ligne['dateFin'],$ligne['validation']);
+            $res = new conge($ligne['idC'],$ligne['debut'],$ligne['fin'],$ligne['validation']);
             $res->setPraticien(getPraticienByIdP($ligne['idPraticien']));
             $resultat[] = $res;
-            //$resultat[] = $ligne;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
     } catch (PDOException $e) {
@@ -133,4 +132,20 @@ function delConge($idC)
         print "Erreur pour la suppresion ". $e->getMessage();
             
     }    
+}
+
+function updateValideConge($idC,$valid) {
+    try {
+        $cnx = connexionPDO();
+        
+        $req = $cnx->prepare("update repos set validation = :validation where id = :idC");
+        $req->bindValue(':validation', $valid, PDO::PARAM_INT);
+        $req->bindValue(':idC', $idC, PDO::PARAM_INT);
+        
+        $resultat = $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
 }

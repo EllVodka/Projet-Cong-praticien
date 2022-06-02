@@ -9,12 +9,16 @@ include_once "$racine/modele/bd.praticien.inc.php";
 
 
 // recuperation des donnees GET, POST, et SESSION
-
-$identifiantP = getPraticienLoggedOn();
-$listeConges = getCongesByPraticien($identifiantP);
+$idC=$_GET['idC'];
+$valid=$_GET['valid'];
+if($valid==1){
+    $valid=0;
+}else{
+    $valid=1;
+}
+updateValideConge($idC,$valid);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 $unConge = getCongesByPraticien($identifiantP);
-include "$racine/vue/entete.html.php";
-include "$racine/vue/vueModifierConge.php"; 
-include "$racine/vue/pied.html.php";
+$destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeCongeAdmin";
+  			header('Location: '.$destination);
 ?>

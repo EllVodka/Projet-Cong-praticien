@@ -9,8 +9,8 @@ include_once "$racine/modele/bd.Praticien.inc.php";
 include_once "$racine/modele/Authentification.inc.php";
 
   // recuperation des donnees GET, POST, et SESSION
-  $debut = $_POST["date_debut"];      
-  $fin = $_POST["date_fin"];
+   $debut = $_POST["date_debut"];      
+   $fin = $_POST["date_fin"];
 
 if($debut > $fin)
 {
@@ -33,9 +33,7 @@ else
   $listeConges = getCongesByPraticien($idP);
 
   // appel du script de vue qui permet de gerer l'affichage des donnees
-  $titre = "Liste des congés de ".$idP;
-  include "$racine/vue/entete.html.php";
-  include "$racine/vue/vueListeCongesPraticien.php";
-  include "$racine/vue/pied.html.php";
+
+$destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeConge";
+  			header('Location: '.$destination);
 }
-?>

@@ -1,10 +1,14 @@
 <?php
     header( 'content-type: text/html; charset=utf-8' );
 
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 include_once "$racine/modele/bd.utilisateur.inc.php";
+include_once "$racine/modele/bd.praticien.inc.php";
+
+$praticien = getPraticiens();
 
 $erreur= "";
 //verification si les champs ne sont pas vides

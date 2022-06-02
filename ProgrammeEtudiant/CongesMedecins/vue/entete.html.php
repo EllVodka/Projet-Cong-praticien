@@ -17,9 +17,9 @@
             
         <ul id="menuGeneral">
             <li><a href="./?action=deconnexion">Déconnexion</a></li> 
-            <li><a href="./?action=Profil">Profil</a></li>
+            <li><a href="./?action=profil">Profil</a></li>
             <li><a href="./?action=listeConge">Liste de congés</a></li>
-            <li><a href="./?action=ajoutConge">Ajouter un congé</a></li>
+            <li><a href="./?action=ajouterConge">Ajouter un congé</a></li>
         </ul>
     </nav>
 

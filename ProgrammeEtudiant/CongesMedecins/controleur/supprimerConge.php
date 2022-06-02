@@ -14,7 +14,12 @@ include_once "$racine/modele/bd.conge.inc.php";
 
   // enregistrement des donnees
   $ret = delConge($idC);
-
+if(isset($_GET['admin'])){
+  $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeCongeAdmin";
+  header('Location: '.$destination);
+}else{
   $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeConge";
   header('Location: '.$destination);
+}
+  
 ?>

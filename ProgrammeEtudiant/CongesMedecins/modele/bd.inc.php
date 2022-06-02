@@ -2,13 +2,13 @@
 header( 'content-type: text/html; charset=utf-8' );
 
 function connexionPDO() {
-    $login = "root";
-    $mdp = "";
+    $login = "ericsergueev";
+    $mdp = "#MonmPC2fou";
     $bd = "gsb_practicien";
     $serveur = "localhost";
 
     try {
-        $conn = new PDO("mysql:host=$serveur;dbname=$bd", $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'')); 
+        $conn = new PDO("mysql:host=$serveur;dbname=$bd;port=3306", $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'')); 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {

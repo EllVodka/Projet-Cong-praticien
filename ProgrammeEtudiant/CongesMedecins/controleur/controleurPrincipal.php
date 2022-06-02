@@ -12,11 +12,15 @@ function controleurPrincipal($action)
     $lesActions["modifierConge"] = "modifierConge.php";
     $lesActions["modificationConge"] = "modificationConge.php";
     $lesActions["supprimerConge"] = "supprimerConge.php";
-    $lesActions["ajoutConge"] = "ajoutConge.php";
-    $lesActions["ajoutConge"] = "ajoutConge.php";
+    $lesActions["ajoutConge"] = "ajoutConge.php";    
     $lesActions["inscription"] = "inscription.php";
     $lesActions["admin"] = "admin.php";
- 
+    $lesActions["profil"] = "profil.php";
+    $lesActions["ajouterConge"] = "ajouterConge.php";
+    $lesActions["listeCongeAdmin"] = "listeCongeAdmin.php";
+    $lesActions["modifierCongeAdmin"] = "modifierCongeAdmin.php";
+    $lesActions["changerConge"] = "changerConge.php";
+    
     if (array_key_exists($action, $lesActions))
     {
         return $lesActions[$action];

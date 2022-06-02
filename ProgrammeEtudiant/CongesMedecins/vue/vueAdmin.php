@@ -1,4 +1,7 @@
-<?php header( 'content-type: text/html; charset=utf-8' ); ?>
+<?php header( 'content-type: text/html; charset=utf-8' ); 
+?>
+
+
 
 <fieldset>
 	<legend class="texte">Formulaire inscrption</legend>
@@ -22,7 +25,7 @@
 
 <fieldset>
 	<legend class="texte">Affichage des praticien</legend>
-	<table>
+	<table bgcolor="white">
 		<thead>
 				<th>Id</th>
 				<th>Nom</th>
@@ -40,13 +43,13 @@
 			for ($i=0; $i < count($resultat); $i++) { 
 			?>
 			<tr>
-				<td><?php echo($resultat[$i]->id); ?></td>
-				<td><?php echo($resultat[$i]->nom); ?></td>
-				<td><?php echo($resultat[$i]->prenom); ?></td>
-				<td><?php echo($resultat[$i]->adresse); ?></td>
-				<td><?php echo($resultat[$i]->coef_notoriete); ?></td>
-				<td><?php echo($resultat[$i]->code_type_praticien); ?></td>
-				<td><?php echo($resultat[$i]->id_ville); ?></td>
+				<td ><?php echo($resultat[$i]->id); ?></td>
+				<td ><?php echo($resultat[$i]->nom); ?></td>
+				<td ><?php echo($resultat[$i]->prenom); ?></td>
+				<td ><?php echo($resultat[$i]->adresse); ?></td>
+				<td ><?php echo($resultat[$i]->coef_notoriete); ?></td>
+				<td ><?php echo($resultat[$i]->code_type_praticien); ?></td>
+				<td ><?php echo($resultat[$i]->id_ville); ?></td>
 			
 			<?php	
 			}

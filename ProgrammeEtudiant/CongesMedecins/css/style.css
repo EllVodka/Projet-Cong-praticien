@@ -699,3 +699,18 @@ a.aimer{
     background-color: #FC2500;
 }
 
+.bord{
+  border: thin solid whitesmoke;
+  border-radius: 10px;
+  margin: 0 20% 0 20% ;
+  padding: 2%;
+}
+.sansBg{
+  background-color: rgba(255, 182, 193, 0) ;
+}
+.h3{
+  padding-left: 2%;
+}
+.noir{
+  color: #333;
+}
