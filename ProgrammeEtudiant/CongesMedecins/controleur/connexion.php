@@ -26,12 +26,12 @@ if (Connexion($idP,$mdpP))
 { // si l'utilisateur est connecté on redirige vers la liste des congés du praticien
     if ($_POST['idP'] == "0" AND $_POST['mdpP'] == "root") 
 {
-    $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=admin";
+    $destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=admin";
     header('Location: '.$destination);
 }
 else
 {
-    $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeConge";
+    $destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=listeConge";
     header('Location: '.$destination);
 }
 }

@@ -19,6 +19,6 @@ if($valid==1){
 updateValideConge($idC,$valid);
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 $unConge = getCongesByPraticien($identifiantP);
-$destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeCongeAdmin";
+$destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=listeCongeAdmin";
   			header('Location: '.$destination);
 ?>

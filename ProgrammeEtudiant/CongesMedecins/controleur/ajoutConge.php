@@ -34,6 +34,6 @@ else
 
   // appel du script de vue qui permet de gerer l'affichage des donnees
 
-$destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeConge";
+$destination ="https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=listeConge";
   			header('Location: '.$destination);
 }

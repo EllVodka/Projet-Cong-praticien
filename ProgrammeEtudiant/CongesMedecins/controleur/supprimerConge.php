@@ -15,10 +15,10 @@ include_once "$racine/modele/bd.conge.inc.php";
   // enregistrement des donnees
   $ret = delConge($idC);
 if(isset($_GET['admin'])){
-  $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeCongeAdmin";
+  $destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=listeCongeAdmin";
   header('Location: '.$destination);
 }else{
-  $destination = "https://localhost/mission2/ProgrammeEtudiant/CongesMedecins/?action=listeConge";
+  $destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=listeConge";
   header('Location: '.$destination);
 }
   
