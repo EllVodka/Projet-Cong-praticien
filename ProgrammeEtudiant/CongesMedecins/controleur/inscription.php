@@ -21,7 +21,7 @@ if (isset($_POST['inscription']))
 		if ($mdpP == $mdpP2) {
 			if(Inscription($idP,$mdpP,$nomP))
 			{
-				  $destination = "https://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=deconnexion";
+				  $destination = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?action=deconnexion";
   			header('Location: '.$destination);
 			}
 			
